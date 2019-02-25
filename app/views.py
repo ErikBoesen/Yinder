@@ -24,6 +24,15 @@ def create_vote(request, user_id, vote):
         voter=request.user,
         vote=vote,
     )
+    if vote:
+        if models.Vote.objects.filder(
+            user=request.user,
+            voter=user,
+            vote=True,
+        ).count():
+            return render(request, 'match.html', dict(
+                match=user
+            ))
     return redirect('index')
 
 @login_required
