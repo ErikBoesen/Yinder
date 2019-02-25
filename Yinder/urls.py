@@ -19,6 +19,7 @@ from django.conf.urls import *
 from django.conf.urls.static import static
 
 urlpatterns = [
+    url(r'^$', include('app.urls')),
     url(r'^', include('django.contrib.auth.urls')),
     url(r'^', include('registration.urls')),
     url(r'^admin', admin.site.urls),
