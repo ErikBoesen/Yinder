@@ -9,3 +9,11 @@ class UserProfile(models.Model):
 
     def __unicode__(self):
         return self.user.get_full_name()
+
+class Vote(models.Model):
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    voter = models.ForeignKey(User, related_name='given_vote', on_delete=models.PROTECT)
+    vote = models.BooleanField(default=False)
+
+    class Meta:
+        unique_together = (('user', 'voter'))
