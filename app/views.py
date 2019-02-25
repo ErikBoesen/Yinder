@@ -25,7 +25,7 @@ def create_vote(request, user_id, vote):
         vote=vote,
     )
     if vote:
-        if models.Vote.objects.filder(
+        if models.Vote.objects.filter(
             user=request.user,
             voter=user,
             vote=True,
