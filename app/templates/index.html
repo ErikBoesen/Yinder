@@ -1,22 +1,20 @@
-<!doctype html>
-<html>
-    <body>
-        <div class="user">
-            {% if user %}
-            <img src="{{ user.userprofile.photo.url }}">
-            <div class="name">
-                {{ user.username }}
-            </div>
-            <div class="bio">{{ tindero.userprofile.bio }}</div>
-            <a href="{% url "accept" user_id=user.id %}">
-                Yeehaw
-            </a>
-            <a href="{% url "reject" user_id=user.id %}">
-                Yeenaw
-            </a>
-            {% else %}
-            Wait for more people to join!
-            {% endif %}
-        </div>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<div class="user">
+    {% if user %}
+    <img src="{{ user.userprofile.photo.url }}">
+    <div class="name">
+        {{ user.username }}
+    </div>
+    <div class="bio">{{ tindero.userprofile.bio }}</div>
+    <a href="{% url "accept" user_id=user.id %}">
+        Yeehaw
+    </a>
+    <a href="{% url "reject" user_id=user.id %}">
+        Yeenaw
+    </a>
+    {% else %}
+    Wait for more people to join!
+    {% endif %}
+</div>
+{% endblock %}
