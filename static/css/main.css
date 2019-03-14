@@ -49,10 +49,6 @@ label {
 label input {
     width: 15%;
 }
-label f {
-    width: 80%;
-    margin-top: -2px;
-}
 ::-webkit-input-placeholder {
     /* Webkit + derivatives */
     color: white;
@@ -62,4 +58,35 @@ label f {
     /* FF 4-18 */
     color: white;
     opacity: 0.7;
+}
+button {
+    font: inherit;
+    padding: 5px 7px;
+    border: solid 2px #333;
+    background: none;
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    transition: color 0.3s;
+}
+button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #333;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease-out;
+}
+button:hover, button:focus, button:active {
+    color: white;
+}
+button:hover:before, button:focus:before, button:active:before {
+    transform: scaleX(1);
 }
