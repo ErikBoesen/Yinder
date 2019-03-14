@@ -1,5 +1,65 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2) format('woff2');
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+html, body { height: 100%; }
+body {
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+header {
+    height: 100px;
+    margin-bottom: 20px;
+}
+header #logo {
+    height: 100%;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    border-left-color: #333;
+    color: #333;
+    background-color: rgba(51, 51, 51, 0.05);
+    border: none;
+    border-left: solid 3px #333;
+    padding: 5px;
+    margin-bottom: 10px;
+    font: inherit;
+    transition: .3s;
+}
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    transition: .3s;
+}
+label {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 7px;
+}
+label input {
+    width: 15%;
+}
+label f {
+    width: 80%;
+    margin-top: -2px;
+}
+::-webkit-input-placeholder {
+    /* Webkit + derivatives */
+    color: white;
+    opacity: 0.7;
+}
+:-moz-placeholder {
+    /* FF 4-18 */
+    color: white;
+    opacity: 0.7;
 }
