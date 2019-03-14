@@ -6,12 +6,12 @@
         <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
     </head>
     <body>
-        <div class="page">
-            <div class="app">
-                <h1><a href="{% url "index" %}">Yinder</a></h1>
-                {% block content %}{% endblock %}
-            </div>
-        </div>
+        <header>
+            <a href="{% url "index" %}"><img id="logo" src="{% static "images/logo.png" %}" alt="Yinder logo"></a>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
     </body>
 </html>
 
